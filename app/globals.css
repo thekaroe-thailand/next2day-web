@@ -2,20 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-gray-800 text-white;
+}
+
+.form-control {
+  @apply bg-gray-700 text-white p-2 rounded-2xl w-full;
+}
+
+.btn {
+  @apply bg-purple-500 text-white px-5 py-3 rounded-2xl hover:bg-red-500;
 }
