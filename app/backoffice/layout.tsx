@@ -12,6 +12,9 @@ export default function BackOfficeLayout({ children }: {
             </div>
             <div className="w-[300px] h-screen bg-gray-500 p-5">
                 <div>Right Box</div>
+                <div className="bg-white p-3 rounded-lg mt-5 text-red-500">
+                    Message Box
+                </div>
             </div>
         </div>
     )

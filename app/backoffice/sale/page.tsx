@@ -90,43 +90,46 @@ export default function Page() {
                     บันทึก
                 </button>
             </div>
+            {orderItems.length > 0 && (
+                <>
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th className="text-left pl-3">barcode</th>
+                                <th className="text-left pl-3">ชื่อสินค้า</th>
+                                <th className="text-right pr-3">ราคา</th>
+                                <th className="w-5"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {orderItems.map((item: any) => (
+                                <tr key={item.id}>
+                                    <td>{item.book.barcode}</td>
+                                    <td>{item.book.name}</td>
+                                    <td className="text-right">{item.price}</td>
+                                    <td className="text-center">
+                                        <button onClick={() => handleDelete(item.id)} className="bg-red-500 text-white px-3 py-1 rounded-lg">
+                                            <i className="fa-solid fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
 
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th className="text-left pl-3">barcode</th>
-                        <th className="text-left pl-3">ชื่อสินค้า</th>
-                        <th className="text-right pr-3">ราคา</th>
-                        <th className="w-5"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {orderItems.map((item: any) => (
-                        <tr key={item.id}>
-                            <td>{item.book.barcode}</td>
-                            <td>{item.book.name}</td>
-                            <td className="text-right">{item.price}</td>
-                            <td className="text-center">
-                                <button onClick={() => handleDelete(item.id)} className="bg-red-500 text-white px-3 py-1 rounded-lg">
-                                    <i className="fa-solid fa-times"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+                    <div className="text-right mt-5 font-bold text-xl">
+                        <div>จำนวนสินค้า : {orderItems.length}</div>
+                        <div>ราคารวม : {totalPrice.toLocaleString()}</div>
+                    </div>
 
-            <div className="text-right mt-5 font-bold text-xl">
-                <div>จำนวนสินค้า : {orderItems.length}</div>
-                <div>ราคารวม : {totalPrice.toLocaleString()}</div>
-            </div>
-
-            <div className="text-center mt-3">
-                <button onClick={handleConfirm} className="bg-teal-600 text-white px-4 py-2 rounded-lg text-xl">
-                    <i className="fa-solid fa-check pr-3"></i>
-                    ยืนยันการขาย
-                </button>
-            </div>
+                    <div className="text-center mt-3">
+                        <button onClick={handleConfirm} className="bg-teal-600 text-white px-4 py-2 rounded-lg text-xl">
+                            <i className="fa-solid fa-check pr-3"></i>
+                            ยืนยันการขาย
+                        </button>
+                    </div>
+                </>
+            )}
         </div>
     )
 }

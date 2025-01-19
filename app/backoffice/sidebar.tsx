@@ -56,7 +56,7 @@ export default function Sidebar() {
                 </div>
             </div>
             <div className="flex flex-col gap-2 p-5">
-                <Link href="/dashboard">
+                <Link href="/backoffice/dashboard">
                     <i className="fa-solid fa-chart-line mr-2"></i>
                     Dashboard
                 </Link>
