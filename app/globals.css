@@ -13,3 +13,37 @@ body {
 .btn {
   @apply bg-purple-500 text-white px-5 py-3 rounded-2xl hover:bg-red-500;
 }
+
+.table {
+  @apply w-full mt-5;
+}
+
+.table thead tr th {
+  @apply bg-teal-800 text-white 
+    pt-3 pb-3;
+}
+
+.table tbody tr td {
+  @apply bg-gray-300 text-black p-3
+  border-b border-gray-600;
+}
+
+.table thead tr th:first-child {
+  @apply rounded-tl-2xl;
+}
+
+.table thead tr th:last-child {
+  @apply rounded-tr-2xl;
+}
+
+.table tbody tr:last-child td:first-child {
+  @apply rounded-bl-2xl border-b-0;
+}
+
+.table tbody tr:last-child td:last-child {
+  @apply rounded-br-2xl border-b-0;
+}
+
+.table tbody tr:last-child td {
+  @apply border-b-0;
+}
