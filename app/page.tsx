@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Swal from 'sweetalert2'; // เพิ่มโค้ดนี้เพื่อใช้ SweetAlert2
 import axios from 'axios'; // เพิ่มโค้ดนี้เพื่อใช้ Axios
-import { ApiUrl, Token } from './confg'; // เพิ่มโค้ดนี้เพื่อใช้ค่าจาก confg.ts
+import { ApiUrl, Token } from './config'; // เพิ่มโค้ดนี้เพื่อใช้ค่าจาก confg.ts
 import { useRouter } from 'next/navigation'; // เพิ่มโค้ดนี้เพื่อใช้ useRouter
 
 export default function Home() {
